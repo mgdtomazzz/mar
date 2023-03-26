@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    margin: 1rem;
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+.yes {
+    background-color: green;
+    color: white;
+    border: none;
+}
+
+.no {
+    background-color: red;
+    color: white;
+    border: none;
+}
+
+.ok {
+    background-color: blue;
+    color: white;
+    border: none;
+}

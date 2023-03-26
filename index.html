@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>I got a question...</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>I have a question, are you ready?</h1>
+        <div class="buttons">
+            <button class="ready" onclick="showQuestion()">Ready</button>
+        </div>
+    </div>
+    <script>
+        function showQuestion() {
+            var container = document.querySelector('.container');
+            container.innerHTML = `
+                <h1>Mi Angel, Will you be my girlfriend?</h1>
+                <div class="buttons">
+                    <button class="yes" onclick="location.href='{{ url_for('congrats') }}'">Yes</button>
+                    <button class="no" onclick="tryAgain()">No</button>
+                </div>
+            `;
+        }
+
+        function tryAgain() {
+            var noButton = document.querySelector('.no');
+            if (noButton.textContent === 'No') {
+                noButton.textContent = 'Try again';
+            } else {
+                noButton.style.display = 'none';
+                var yesButton = document.querySelector('.yes');
+                yesButton.style.margin = 'auto';
+                yesButton.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
